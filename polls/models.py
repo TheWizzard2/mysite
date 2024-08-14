@@ -1,3 +1,4 @@
+from datetime import datetime, timezone
 from django.db import models
 
 # Create your models here.
@@ -5,6 +6,10 @@ from django.db import models
 class Question(models.Model):
     def __str__(self):
         return self.question_text
+    
+    # Método para verificar si fue publicada recientemente, en un lapso de un dia
+    def was_published_recently(self):
+        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
     question_text = models.CharField(max_length=200)
     pub_date = models.DateTimeField("fecha publicación")
