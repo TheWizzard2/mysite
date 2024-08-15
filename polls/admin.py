@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+# Se registra la aplicación en el sitio administrativo
 from .models import Question
 
 admin.site.register(Question)
