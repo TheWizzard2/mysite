@@ -7,7 +7,7 @@ class Question(models.Model):
     def __str__(self):
         return self.question_text
     
-    # Método para verificar si fue publicada recientemente, en un lapso de un dia
+    # Método para verificar si fue f publicada recientemente, en un lapso de un dia
     def was_published_recently(self):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
